@@ -159,9 +159,7 @@ public class LinkedList {
              return i;
         }
         Node temp = head;
-        
         while(temp.next != null){
-
             if(temp.next.data == value){
                 int v = temp.next.data;
                 Node n = temp.next;
@@ -172,8 +170,31 @@ public class LinkedList {
             temp = temp.next;
         }
         System.out.println("please enter value which available in the LL");
-
         return null;
+    }
+
+    public void deleteAllOccurence(int val){
+        if(head == null){
+            System.out.println("Empty LIST");
+            return;
+        }
+        // special edge case what if consecutive head values have same value and
+        //target is same number so we need to add dummy node or do until head value
+        // not equal to target.
+
+        while(head != null && head.data == val){
+            head = head.next;
+        }
+        Node temp = head;
+        // here special attention if list have all same and target is the same value
+        // then at the end head is pointing at null so here temp.next Leads NULL ptr EXCEPTION
+        while(temp != null && temp.next != null){
+            if(temp.next.data == val){
+                temp.next = temp.next.next;
+            }else{
+                temp = temp.next;
+            }
+        } 
     }
 
 }
