@@ -19,6 +19,16 @@ public class Main {
         // l.addBeforeVal(4, 69);
         // l.display();
 
+        l.addLast(7);
+        l.addLast(17);
+        l.addLast(17);
+        l.addLast(27);
+        l.addLast(69);
+        
+        l.display();
+        System.out.println(l.deleteValue(17));
+        l.display();
+        
 
         
     }

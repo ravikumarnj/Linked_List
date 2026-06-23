@@ -120,4 +120,60 @@ public class LinkedList {
         return val;
     }
 
+    // deletion at index
+    public Integer deleteIndex(int index){
+        if(head == null){
+            System.out.println("cant able to delete List is Empty !");
+            return null;
+        }
+        if(index == 1){
+             Integer i = head.data;
+             head = head.next;
+             return i;
+        }
+        int count = 0;
+        Node temp = head;
+        while(temp.next != null){
+            count++;
+            if(count == index-1){
+                int i = temp.next.data;
+                Node p = temp.next.next;
+                temp.next.next =null;
+                temp.next = p;
+                return i;
+            }
+            temp = temp.next;
+        }
+        return null;
+    }
+
+    // deletion of value
+    public Integer deleteValue(int value){
+        if(head == null){
+            System.out.println("head is null ");
+            return null;
+        }
+        if(head.data == value){
+            int i = head.data;
+             head = head.next;
+             return i;
+        }
+        Node temp = head;
+        
+        while(temp.next != null){
+
+            if(temp.next.data == value){
+                int v = temp.next.data;
+                Node n = temp.next;
+                temp.next = temp.next.next;
+                n.next = null;
+                return v;
+            }
+            temp = temp.next;
+        }
+        System.out.println("please enter value which available in the LL");
+
+        return null;
+    }
+
 }
