@@ -21,11 +21,13 @@ public class Main {
 
         l.addLast(20);
         l.addLast(20);
+        
+        l.addLast(20);
         l.addLast(20);
         
         
         l.display();
-        l.deleteAllOccurence(20);
+        l.deleteAllOccurenceUsingDummyNode(20);
         l.display();
         
 

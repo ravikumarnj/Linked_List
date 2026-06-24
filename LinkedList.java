@@ -197,4 +197,24 @@ public class LinkedList {
         } 
     }
 
+    // this method performing removing all occurence of target element.
+    public void deleteAllOccurenceUsingDummyNode(int val){
+        if(head == null){
+            System.out.println("Empty LIST");
+            return;
+        }
+        Node dummyNode = new Node(0);
+        dummyNode.next = head;
+        head = dummyNode;
+
+        Node temp = head;
+        while(temp.next != null){
+            if(temp.next.data == val){
+                temp.next = temp.next.next;
+            }else{
+                temp = temp.next;
+            }
+        }
+        head = head.next;
+    }
 }
